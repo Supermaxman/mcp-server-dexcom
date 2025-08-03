@@ -9,7 +9,10 @@ DEXCOM_PASSWORD = os.getenv("DEXCOM_PASSWORD")
 
 dexcom = Dexcom(username=DEXCOM_USERNAME, password=DEXCOM_PASSWORD)
 
-mcp = FastMCP("Dexcom MCP Server")
+mcp = FastMCP(
+    name="Dexcom MCP Server",
+    instructions="A Model Context Protocol server that provides tools to fetch and chart Dexcom CGM data.",
+)
 
 
 class GlucoseReading(BaseModel):
